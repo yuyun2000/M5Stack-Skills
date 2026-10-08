@@ -11,7 +11,7 @@ Publisher: `yuyun2000` (personal identity, confirmed by the user).
   metadata, a local icon, and a reproducible ZIP builder.
 - [x] Prepare English/Chinese community announcements and three demo scripts,
   using actual test evidence and no claims of hardware execution.
-- [ ] Validate manifests/package contents, installation, repository checks and CI;
+- [x] Validate manifests/package contents, installation, repository checks and CI;
   publish the GitHub changes and downloadable distribution artifacts.
 - [x] Check public directory visibility; record observable status separately from
   indexing prerequisites. Attempt market/community publication if authenticated
@@ -44,3 +44,15 @@ is available; platform login and submission cannot be inferred from that access.
   coordination with the M5Stack MCP domain operator.
 - ClawHub publication is pending a separately authorized license-compatible
   package. Existing upstream MIT material and notices remain unchanged.
+- Distribution source commit: `fd75bd5`. Local/remote `main` matched, and
+  [GitHub CI](https://github.com/yuyun2000/M5Stack-Skills/actions/runs/37745784417)
+  passed, including offline tests and archive construction.
+- [Release v0.1.0](https://github.com/yuyun2000/M5Stack-Skills/releases/tag/v0.1.0)
+  is public with seven assets. Every downloaded asset matched its local source
+  by SHA-256, and all six ZIPs passed integrity checks.
+- A subsequent exact skills CLI search returned no matching directory result.
+  Indexing is still unconfirmed; no delayed follow-up automation was created.
+
+Repository/distribution preparation and GitHub release are complete. External
+market review, community posting, directory indexing confirmation and hardware
+recording remain open under the prerequisites above.
