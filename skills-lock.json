@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-10-08",
+  "contentDigest": "sha256 of sorted relative/path + NUL + file-sha256 + LF records (UTF-8)",
+  "skills": [
+    {
+      "name": "uiflow2-coder",
+      "source": "M5Stack Skill Hub",
+      "sourceUpdatedAt": "2026-09-22T02:53:22Z",
+      "sourceFileCount": 376,
+      "sourceSizeBytes": 2401172,
+      "sourceArchiveSha256": "f1b5b30a36ac2f107f87c3306dc043a7fd9b4b263519748baeb27a7b8db32d59",
+      "sourceContentSha256": "4e815344aa912a47d35e123b7bd4b069588c6b51245a0df51662d6efdfc37834",
+      "publishedFileCount": 377,
+      "publishedContentSha256": "85712f8cae9e40ac07a7de4ff5ab5e156bf6eba1e2837ec531949456e7cb668c",
+      "publicAdjustments": [
+        "Add a portable MIT LICENSE notice.",
+        "Restore executable bits on shebang helper scripts where applicable."
+      ]
+    },
+    {
+      "name": "m5stack-firmware-query",
+      "source": "M5Stack Skill Hub",
+      "sourceUpdatedAt": "2026-09-10T09:10:25Z",
+      "sourceFileCount": 5,
+      "sourceSizeBytes": 79798,
+      "sourceArchiveSha256": "ec47dd9bb149f31b8e1db1b7e742181827a17d0b196ee6e3fe0f90fc186198c9",
+      "sourceContentSha256": "d36bc37e82c1f885c3e6ed9f56fc068e0df1bf692be167122e3e8072e299b4fa",
+      "publishedFileCount": 6,
+      "publishedContentSha256": "ba48b2e56dc34d2869743d4ade7bc9bb8b847fcf0195613de81f0ddac230b3f7",
+      "publicAdjustments": [
+        "Add a portable MIT LICENSE notice.",
+        "Restore executable bits on shebang helper scripts where applicable."
+      ]
+    },
+    {
+      "name": "uiflow2-ui-designer",
+      "source": "M5Stack Skill Hub",
+      "sourceUpdatedAt": "2026-09-01T06:57:55Z",
+      "sourceFileCount": 10,
+      "sourceSizeBytes": 66251,
+      "sourceArchiveSha256": "d1f501fc686757e9cc0e3a1d88f398fc45010e78b8b99e81a51e9a16d4ec3202",
+      "sourceContentSha256": "01240c0dbfdf4c3636ffcaba420dc87e561d1169573b3632dbb1ac4cd865d2f0",
+      "publishedFileCount": 11,
+      "publishedContentSha256": "48c169149ad1e377f473c962bcfed42ae49774a871c69ca062dfaa9f9380f7ce",
+      "publicAdjustments": [
+        "Add a portable MIT LICENSE notice.",
+        "Restore executable bits on shebang helper scripts where applicable."
+      ]
+    },
+    {
+      "name": "m5stack-assistant",
+      "source": "M5Stack Skill Hub",
+      "sourceUpdatedAt": "2026-07-28T10:54:11Z",
+      "sourceFileCount": 6,
+      "sourceSizeBytes": 23693,
+      "sourceArchiveSha256": "4bf3f159a19af8b686056beb8e425f44b6be64d7ca9ea0d596632cc18f8bd1c7",
+      "sourceContentSha256": "4b783dd2706aae881914cfb3eb190570de4bfbd7511676d46f2100f4ec5ef37c",
+      "publishedFileCount": 7,
+      "publishedContentSha256": "681d8891350bab0e93e01e16520cb891f0dc7804f1db7b738da72d8b6f9adbae",
+      "publicAdjustments": [
+        "Add a portable MIT LICENSE notice.",
+        "Restore executable bits on shebang helper scripts where applicable.",
+        "Remove trailing whitespace from scripts/mcp.js and scripts/mcp.mjs; no behavior changes."
+      ]
+    }
+  ]
+}
