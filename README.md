@@ -20,6 +20,28 @@ versions, and board-specific APIs must still be checked for the target device.
 
 ## Install
 
+### Install with the skills CLI
+
+Run this in the project where you want to use the skills:
+
+```bash
+npx skills add yuyun2000/M5Stack-Skills
+```
+
+Choose your agent and the skills to install. Keep the UI design pair together:
+
+```bash
+npx skills add yuyun2000/M5Stack-Skills --skill uiflow2-coder uiflow2-ui-designer
+```
+
+The [skills CLI](https://github.com/vercel-labs/skills) supports Codex, Claude Code
+and other agents. It installs complete packages; MCP setup remains a separate
+step. Standard CLI installations contribute to the
+[skills.sh directory](https://www.skills.sh/docs/faq). You can opt out of its
+telemetry with `DISABLE_TELEMETRY=1`.
+
+### Manual installation
+
 Clone this repository:
 
 ```bash
@@ -111,6 +133,19 @@ UIFlow2 source and current documentation:
 
 For checks and updates, see [CONTRIBUTING.md](CONTRIBUTING.md).
 Report reproducible issues through [GitHub Issues](https://github.com/yuyun2000/M5Stack-Skills/issues).
+
+## Plugin and community distribution
+
+This repository also contains a portable `m5stack-skills` plugin manifest and
+the public M5Stack SSE MCP configuration. Download the complete plugin ZIP and
+individual skill ZIPs from [GitHub Releases](https://github.com/yuyun2000/M5Stack-Skills/releases).
+The plugin publisher is **yuyun2000**, using a personal identity.
+
+See [distribution instructions](docs/distribution.md) for package checks,
+directory status and public-marketplace submission prerequisites. Community
+announcements and three recording scripts are in
+[the launch kit](docs/launch-kit.md). Market listing and hardware demo recording
+are separate from preparing these artifacts.
 
 ## License
 

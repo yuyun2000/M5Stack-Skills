@@ -19,6 +19,27 @@ UIFlow2 相关 skill 面向 UIFlow2 MicroPython。实际板卡能力、固件版
 
 ## 安装
 
+### 使用 skills CLI 安装
+
+在需要使用 skill 的项目目录中运行：
+
+```bash
+npx skills add yuyun2000/M5Stack-Skills
+```
+
+按提示选择 Agent 和需要安装的 skill。UI 设计的两个 skill 建议一起安装：
+
+```bash
+npx skills add yuyun2000/M5Stack-Skills --skill uiflow2-coder uiflow2-ui-designer
+```
+
+[skills CLI](https://github.com/vercel-labs/skills)支持 Codex、Claude Code 等 Agent，
+会安装完整包；MCP 仍需单独配置。标准 CLI 安装会参与
+[skills.sh 目录统计](https://www.skills.sh/docs/faq)，可通过 `DISABLE_TELEMETRY=1`
+关闭遥测。
+
+### 手动安装
+
 ```bash
 git clone https://github.com/yuyun2000/M5Stack-Skills.git
 cd M5Stack-Skills
@@ -103,6 +124,17 @@ node skills/m5stack-assistant/m5-search.mjs "CoreS3 引脚定义" --filter produ
 维护与检查步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。问题反馈请提交
 [GitHub Issue](https://github.com/yuyun2000/M5Stack-Skills/issues)，附上产品、固件版本、
 复现步骤和已脱敏的错误输出。
+
+## 插件与社区分发
+
+仓库也提供 `m5stack-skills` 可移植插件清单及 M5Stack 公开 SSE MCP 配置。
+完整插件 ZIP 和单个 skill ZIP 可从
+[GitHub Releases](https://github.com/yuyun2000/M5Stack-Skills/releases)下载。
+插件使用个人发布者身份 **yuyun2000**。
+
+[分发说明](docs/distribution.md)包含打包检查、目录状态和公开插件市场的提交前提；
+[推广材料](docs/launch-kit.md)包含中英文社区发布稿及三份演示录制脚本。
+插件包准备完成与市场上架、真机演示录制是分别验证的步骤。
 
 ## 许可证
 

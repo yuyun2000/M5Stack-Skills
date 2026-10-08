@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "m5stack-docs": {
+      "type": "sse",
+      "url": "https://mcp.m5stack.com/sse"
+    }
+  }
+}

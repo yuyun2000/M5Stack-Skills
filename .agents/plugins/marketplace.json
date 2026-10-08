@@ -1,0 +1,21 @@
+{
+  "name": "yuyun2000-m5stack",
+  "interface": {
+    "displayName": "M5Stack Skills by yuyun2000"
+  },
+  "plugins": [
+    {
+      "name": "m5stack-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/yuyun2000/M5Stack-Skills.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

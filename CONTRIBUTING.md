@@ -18,6 +18,18 @@ PYTHONDONTWRITEBYTECODE=1 python3 skills/m5stack-firmware-query/scripts/test_m5s
 git diff --check
 ```
 
+When changing distribution metadata or assets, also build the plugin/skill ZIPs
+into a fresh output directory and review the archive membership and checksums:
+
+```bash
+python3 scripts/build_distribution.py --output-dir /tmp/m5stack-skills-release
+```
+
+The builder verifies complete source-to-archive content and executable modes.
+For a public plugin submission, validate `plugin.json` and `mcp.json` against the
+current schemas named in their `$schema` fields, and complete the separate
+publisher/platform checks described in [docs/submission.md](docs/submission.md).
+
 The validator checks frontmatter, complete package manifests, local Markdown
 links, UTF-8 encoding, unexpected artifacts, script syntax, and high-confidence
 credential patterns. It does not replace a manual public-release audit or prove

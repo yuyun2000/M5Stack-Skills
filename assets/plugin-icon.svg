@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>M5Stack Skills circuit icon</title>
+  <rect width="256" height="256" rx="52" fill="#15191F"/>
+  <g fill="none" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round">
+    <path d="M88 52V76M128 52V76M168 52V76M88 180V204M128 180V204M168 180V204"/>
+    <path d="M52 88H76M52 128H76M52 168H76M180 88H204M180 128H204M180 168H204"/>
+  </g>
+  <rect x="72" y="72" width="112" height="112" rx="24" fill="#C62828"/>
+  <g fill="#FFFFFF">
+    <rect x="98" y="98" width="24" height="24" rx="5"/>
+    <rect x="134" y="98" width="24" height="24" rx="5"/>
+    <rect x="98" y="134" width="24" height="24" rx="5"/>
+    <rect x="134" y="134" width="24" height="24" rx="5"/>
+  </g>
+</svg>

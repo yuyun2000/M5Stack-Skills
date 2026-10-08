@@ -6,6 +6,8 @@ import hashlib
 import json
 import re
 import subprocess
+import struct
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -82,6 +84,16 @@ def validate(update_manifest=False):
         if path.suffix in {".pyc", ".zip", ".bin", ".elf", ".log"} or path.name.startswith(".env") or path.name == ".DS_Store":
             errors.append(f"{relative}: unexpected runtime/archive file")
         data = path.read_bytes()
+        png_sizes = {
+            "assets/plugin-icon.png": (256, 256),
+            "assets/promo/01-uiflow2-coding.png": (1200, 675),
+            "assets/promo/02-uiflow2-ui.png": (1200, 675),
+            "assets/promo/03-firmware-support.png": (1200, 675),
+        }
+        if relative.as_posix() in png_sizes:
+            if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR" or struct.unpack(">II", data[16:24]) != png_sizes[relative.as_posix()]:
+                errors.append(f"{relative}: invalid published PNG")
+            continue
         try:
             text = data.decode("utf-8")
         except UnicodeDecodeError:
@@ -93,6 +105,18 @@ def validate(update_manifest=False):
             errors.append(f"{relative}: trailing whitespace")
         if SECRET.search(text):
             errors.append(f"{relative}: possible credential; inspect without printing it")
+        if path.suffix == ".svg":
+            try:
+                svg = ET.fromstring(text)
+                if svg.tag != "{http://www.w3.org/2000/svg}svg":
+                    errors.append(f"{relative}: invalid SVG root")
+            except ET.ParseError as exc:
+                errors.append(f"{relative}: {exc}")
+        if path.suffix == ".json":
+            try:
+                json.loads(text)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{relative}: {exc}")
         if path.suffix == ".md":
             # Links in these packages use standard inline Markdown destinations.
             for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", text):

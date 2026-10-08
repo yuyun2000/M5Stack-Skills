@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "m5stack-skills",
+  "version": "0.1.0",
+  "description": "UIFlow2 MicroPython development, embedded interface design, public firmware discovery and M5Stack documentation search.",
+  "author": {
+    "name": "yuyun2000",
+    "url": "https://github.com/yuyun2000"
+  },
+  "homepage": "https://github.com/yuyun2000/M5Stack-Skills",
+  "repository": "https://github.com/yuyun2000/M5Stack-Skills",
+  "license": "MIT",
+  "keywords": ["m5stack", "uiflow2", "micropython", "esp32", "embedded", "agent-skills"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "M5Stack Skills",
+        "shortDescription": "Code, design and research M5Stack projects",
+        "longDescription": "Four focused skills with bundled UIFlow2 documentation, curated examples, read-only M5Burner discovery and public M5Stack MCP support. Published by yuyun2000.",
+        "developerName": "yuyun2000",
+        "category": "Developer Tools",
+        "websiteURL": "https://github.com/yuyun2000/M5Stack-Skills",
+        "privacyPolicyURL": "https://github.com/yuyun2000/M5Stack-Skills/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/yuyun2000/M5Stack-Skills/blob/main/TERMS.md",
+        "defaultPrompt": [
+          "Use M5Stack Skills to write a CoreS3 UIFlow2 sensor dashboard using documented APIs.",
+          "Use M5Stack Skills to find public firmware for Cardputer ADV.",
+          "Use M5Stack Skills to check CoreS3 Grove pin definitions against official documentation."
+        ],
+        "brandColor": "#C62828",
+        "composerIcon": "./assets/plugin-icon.png",
+        "logo": "./assets/plugin-icon.png"
+      }
+    }
+  }
+}
