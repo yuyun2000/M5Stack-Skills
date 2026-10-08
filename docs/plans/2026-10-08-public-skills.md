@@ -14,7 +14,7 @@ portable packages in the public M5Stack-Skills repository.
   contribution guidance and a source manifest without private Hub details.
 - [x] Validate skill metadata, links, encoding, script syntax, offline tests,
   public API smoke tests and the staged public-release diff.
-- [ ] Commit and push to `main`; verify the remote commit and CI result.
+- [x] Commit and push to `main`; verify the remote commit and CI result.
 
 Done when the public remote contains all four packages and a new user can
 identify, install and use each skill from the README. Offline validation and
@@ -39,3 +39,10 @@ installations. Do not upload firmware, flash devices or submit test feedback.
   `knowledge_search` CLI returned official CoreS3 documentation.
 - No device execution, visual hardware verification or PowerShell runtime test
   was performed. PowerShell is unavailable on the validation machine.
+- Initial publication commit: `0764369`; local and remote `main` matched.
+  [GitHub validation run](https://github.com/yuyun2000/M5Stack-Skills/actions/runs/37743762516)
+  passed on Linux with Python 3.10 and Node.js 22.
+- The initial run identified deprecated Action runtime versions. The workflow
+  now uses the current stable checkout/setup-python/setup-node releases, whose
+  manifests declare Node.js 24; verification of that follow-up is performed
+  after this completion record is committed.
