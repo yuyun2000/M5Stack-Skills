@@ -31,7 +31,7 @@ def setup():
     global page0, chart0, i2c0, series_temp, series_humi, env3_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     chart0 = m5ui.M5Chart(
@@ -251,7 +251,7 @@ chart_0.toggle_flag(lv.obj.FLAG.HIDDEN)
 ```python
 def chart_0_value_changed_event(event_struct):
     global page0, button0
-    print("value changed")
+    print("value changed)
 
 def chart_0_event_handler(event_struct):
     global page0, button0

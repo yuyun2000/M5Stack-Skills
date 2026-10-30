@@ -45,7 +45,7 @@ Repository and installation guide:
 [M5Stack-Skills](https://github.com/yuyun2000/M5Stack-Skills).
 [Download ZIP packages](https://github.com/yuyun2000/M5Stack-Skills/releases).
 
-The skills CLI installation was verified against all 401 package files. Seven
+The skills CLI installation was verified against all 410 package files. Seven
 firmware-query tests and GitHub CI passed; public firmware discovery and MCP
 search were smoke-tested. Generated programs still need validation on your
 specific board and firmware.
@@ -78,7 +78,7 @@ MCP 需要另外配置；插件包已附公开 SSE MCP 配置。
 [仓库与中文安装说明](https://github.com/yuyun2000/M5Stack-Skills/blob/main/README.zh-CN.md)
 ｜[完整下载包](https://github.com/yuyun2000/M5Stack-Skills/releases)
 
-目前已验证 CLI 安装后的 401 个文件一致，7 个固件查询测试及 GitHub CI 通过，
+目前已验证 CLI 安装后的 410 个文件一致，7 个固件查询测试及 GitHub CI 通过，
 公开固件 API 和 MCP 搜索也已做实际查询。生成代码仍需按具体板卡和固件做真机验证。
 
 欢迎试用后反馈产品型号、固件版本、使用需求和已脱敏的结果；缺文档、接口不一致或

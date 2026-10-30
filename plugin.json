@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "m5stack-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UIFlow2 MicroPython development, embedded interface design, public firmware discovery and M5Stack documentation search.",
   "author": {
     "name": "yuyun2000",

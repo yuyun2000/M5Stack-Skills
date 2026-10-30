@@ -160,22 +160,6 @@ Mic.config(pin_data_in=1)
     The parameter rate generally includes 8000, 11025, 22050, 32000, 44100, with a default of 8000.
     The parameter stereo is passed as True or False.
 
-### `Mic.recordWavFile(path, rate=16000, time=5, stereo=False) -> None`
-
-    Record audio directly into a WAV file on the file system.
-
-    The parameter path is the destination path, for example `/flash/record.wav`.
-    The parameter rate is the sampling rate in Hz, with a default of 16000.
-    The parameter time is the recording duration in seconds, with a default of 5.
-    The parameter stereo selects mono (False, default) or stereo (True).
-
-```python
-import M5
-from M5 import *
-
-M5.begin()
-M5.Mic.recordWavFile("/flash/record.wav", 16000, 1)
-```
 ## class mic_config_t
 
 ### `mic_config_t.pin_data_in`

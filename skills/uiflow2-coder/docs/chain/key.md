@@ -81,6 +81,27 @@ chainbus_0 = ChainBus(2, 32, 33, verbose=True)
 keychain_0 = KeyChain(chainbus_0, 1)
 ```
 
+### `set_rgb_color`
+set RGB color.
+
+- Parameter `color` (`int`): RGB color value.
+- Returns: True if success, False otherwise.
+- Return type: bool
+
+```python
+keychain_0.set_rgb_color(0xFF0000)
+```
+
+### `get_rgb_color`
+get RGB color.
+
+- Returns: RGB color value.
+- Return type: int
+
+```python
+color = keychain_0.get_rgb_color()
+```
+
 ### `get_button_state`
 get button state.
 
@@ -194,90 +215,4 @@ get button mode.
 
 ```python
 mode = keychain_0.get_button_mode()
-```
-
-### `set_rgb_color`
-set RGB color.
-
-- Parameter `color` (`int`): RGB color value.
-- Returns: True if success, False otherwise.
-- Return type: bool
-
-```python
-keychain_0.set_rgb_color(0xFF0000)
-```
-
-### `get_rgb_color`
-get RGB color.
-
-- Parameter `index`: Index of the RGB LED.
-- Returns: RGB color value.
-- Return type: int
-
-```python
-color = keychain_0.get_rgb_color()
-```
-
-### `set_rgb_brightness`
-set RGB brightness.
-
-- Parameter `brightness` (`int`): Brightness value (0-100).
-- Parameter `save` (`bool`): Whether to save the brightness setting to flash.
-- Returns: True if success, False otherwise.
-- Return type: bool
-
-```python
-keychain_0.set_rgb_brightness(80)
-```
-
-### `get_rgb_brightness`
-get RGB brightness.
-
-- Returns: Brightness value (0-100).
-- Return type: int
-
-```python
-brightness = keychain_0.get_rgb_brightness()
-```
-
-### `get_bootloader_version`
-get bootloader version.
-
-- Returns: Bootloader version.
-- Return type: int
-
-```python
-version = keychain_0.get_bootloader_version()
-```
-
-### `get_firmware_version`
-get firmware version.
-
-- Returns: Firmware version.
-- Return type: int
-
-```python
-version = keychain_0.get_firmware_version()
-```
-
-### `get_device_type`
-get device type.
-
-- Returns: Device type. Returns -1 if failed.
-- Return type: int
-
-```python
-device_type = keychain_0.get_device_type()
-```
-
-### `get_device_uid`
-get device UID.
-
-- Parameter `uid_type` (`int`): UID type, 0 for 4-byte UID, 1 for 12-byte UID.
-- Returns: Tuple of UID bytes (4 bytes or 12 bytes). Returns empty tuple on error.
-- Return type: tuple
-
-```python
-uid = keychain_0.get_device_uid(0)  # 4-byte UID
-uid = keychain_0.get_device_uid(1)  # 12-byte UID
 ```

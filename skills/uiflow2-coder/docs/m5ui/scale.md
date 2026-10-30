@@ -23,7 +23,7 @@ def setup():
     global page0, scale0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     scale0 = m5ui.M5Scale(
@@ -81,7 +81,7 @@ Create a scale object.
 - Parameter `end_pos` (`int`): The ending position of the scale.
 - Parameter `tick_count` (`int`): The total number of ticks on the scale.
 - Parameter `tick_every` (`int`): The interval between major ticks on the scale.
-- Parameter `show_mode` (`int`): The display mode of the scale. It can be one of the following:
+- Parameter `mode` (`int`): The mode of the scale. It can be one of the following:
 
     Options:
 
@@ -99,7 +99,7 @@ from m5ui import M5Scale
 import lvgl as lv
 
 m5ui.init()
-scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, show_mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
+scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
 ```
 
 ### `set_mode`

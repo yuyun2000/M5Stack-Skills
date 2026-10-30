@@ -1,7 +1,8 @@
 # Distribution and discovery
 
-Publisher: **yuyun2000**, personal developer identity. Rules and observed status
-below were checked on **2026-10-08**.
+Publisher: **yuyun2000**, personal developer identity. Package/install information
+was refreshed on **2026-10-30**. External directory rules and observed status
+below were last checked on **2026-10-08** and were not rechecked for this release.
 
 ## Install from GitHub through the skills CLI
 
@@ -12,7 +13,7 @@ npx skills add yuyun2000/M5Stack-Skills --skill uiflow2-coder uiflow2-ui-designe
 
 Use `--list` to preview available skills without installing. The four packages
 were discovered and installed with skills CLI **1.7.1** into an isolated Codex
-project. All **401 files** matched the repository by SHA-256; executable script
+project. All **410 files** matched the repository by SHA-256; executable script
 modes and the designer's sibling-document links were verified. No user-wide
 agent installation was changed.
 
@@ -38,11 +39,11 @@ are claimed. A real installation test is not a substitute for organic adoption.
 
 [GitHub Releases](https://github.com/yuyun2000/M5Stack-Skills/releases) provide:
 
-- `m5stack-skills-0.1.0.zip`: portable plugin with all four skills, public SSE
+- `m5stack-skills-0.1.1.zip`: portable plugin with all four skills, public SSE
   MCP configuration, PNG/SVG icon, policy documents and original license notices.
-- One `skill-name-0.1.0.zip` per skill, each with one top-level skill folder.
+- One `skill-name-0.1.1.zip` per skill, each with one top-level skill folder.
 - `SHA256SUMS.txt`: archive checksums.
-- `m5stack-launch-kit-0.1.0.zip`: community announcements, demo recording scripts
+- `m5stack-launch-kit-0.1.1.zip`: community announcements, demo recording scripts
   and shareable SVG/PNG workflow cards.
 
 The source is maintained once under `skills/`; no second editable skill copy is

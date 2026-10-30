@@ -114,6 +114,8 @@ node skills/m5stack-assistant/m5-search.mjs "CoreS3 引脚定义" --filter produ
 ## 来源与维护
 
 首批四个包于 **2026-10-08** 从 M5Stack Skill Hub 获取。
+`uiflow2-coder` 于 **2026-10-30** 同步更新至分发版本 **0.1.1**，补充设备和驱动文档，
+并更新显示 API 与屏幕方向说明。
 [skills-lock.json](skills-lock.json)记录源版本更新时间、归档和内容哈希、文件数及
 公开版调整，不包含私有服务地址或 Hub 评论。内置文档是快照，请按目标固件核对。
 

@@ -63,7 +63,7 @@ def slider0_event_handler(event_struct):
 def setup():
     global page0, led0, switch0, slider0, label0, brightness
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     led0 = m5ui.M5LED(x=135, y=14, size=50, color=0x00FF00, on=True, parent=page0)
@@ -151,11 +151,11 @@ Create a LED object.
     None
 
 ```python
-from m5ui import M5LED
+from m5ui import M5Led
 import lvgl as lv
 
 m5ui.init()
-led_0 = M5LED(x=50, y=50, size=50, color=0x00FF00, on=True, parent=page0)
+led_0 = M5Led(x=50, y=50, size=50, color=0x00FF00, on=True, parent=page0)
 ```
 
 ### `set_color`

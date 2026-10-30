@@ -6,6 +6,15 @@ status, and timestamp operations. The PHY channel is fixed to channel 9, and
 only one active
 `StampUWB` instance is supported.
 
+## Timestamp units
+
+Stamp UWB timestamp values are raw 40-bit QM33120/DW3720 device-clock counts.
+They are not milliseconds and are not Unix or wall-clock timestamps. One device
+time unit is `1 / (499200000 * 128)` seconds, approximately `15.65 ps`.
+To convert an elapsed timestamp difference to seconds, multiply it by
+`1 / (499200000 * 128)`. The 40-bit counter wraps approximately every
+`17.21 s`.
+
 Support the following products:
 
     Stamp UWB
@@ -48,7 +57,8 @@ tof = (round_a * round_b - delay_a * delay_b) \
       / (round_a + round_b + delay_a + delay_b)
 distance = abs(tof * DWT_TIME_UNITS * 299702547)
 ```
-`DWT_TIME_UNITS` is `1 / (499200000 * 128)` seconds. The Anchor prints the
+`DWT_TIME_UNITS` is `1 / (499200000 * 128)` seconds (approximately
+`15.65 ps` per device-clock count, not milliseconds). The Anchor prints the
 calculated distance locally. This simplified protocol does not send the
 distance back to the Tag.
 
@@ -355,6 +365,7 @@ def loop():
                 stamp_uwb.clear_status(uwb.STATUS_TX_DONE)
                 print((str("final sent, sequence=") + str(sequence)))
                 sequence = sequence + 1 & 0xFF
+        print(stamp_uwb.tx_timestamp())
     except:
         print("ranging retry")
         stamp_uwb.force_trx_off()
@@ -506,10 +517,14 @@ stamp_uwb_0.configure_tx_rf(0x34, 0xFEFEFEFE, 0)
 ```
 ### `StampUWB.set_antenna_delay(tx=16385, rx=16385)`
 
-    Set the TX and RX antenna delays.
+    Set the TX and RX timestamp antenna-delay compensation values. These values
+    compensate the fixed delay between the UWB timestamp reference point and the
+    actual antenna TX/RX point for ranging calibration. They do not delay packet
+    transmission or change RF power. Keep the default values unless the device
+    has been calibrated for precision ranging.
 
-    - Parameter `tx` (`int`): TX antenna delay in device time units, range `0` to `65535`. Default is `16385`.
-    - Parameter `rx` (`int`): RX antenna delay in device time units, range `0` to `65535`. Default is `16385`.
+    - Parameter `tx` (`int`): TX compensation in device time units, range `0` to `65535`. Default is `16385`.
+    - Parameter `rx` (`int`): RX compensation in device time units, range `0` to `65535`. Default is `16385`.
 
 ```python
 stamp_uwb_0.set_antenna_delay(tx=16385, rx=16385)
@@ -565,7 +580,7 @@ stamp_uwb_0.write_tx_frame(b"hello", ranging=True)
 
     Set the delayed TX/RX device time.
 
-    - Parameter `device_time` (`int`): Low 32 bits of the 40-bit device timestamp shifted right by 8, range `0` to `4294967295`.
+    - Parameter `device_time` (`int`): Low 32 bits of the 40-bit device timestamp shifted right by 8, range `0` to `4294967295`. Each increment represents 256 device-clock counts (approximately `4.006 ns`), not milliseconds.
 
 ```python
 delayed_time = (stamp_uwb_0.rx_timestamp() + 4500 * 63898) >> 8
@@ -652,7 +667,7 @@ stamp_uwb_0.read_rx_frame()
 
     Read the last TX timestamp.
 
-    - Returns: Full 40-bit TX timestamp in device time units.
+    - Returns: Full 40-bit TX timestamp as a raw device-clock count. One count is approximately `15.65 ps`; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by `1 / (499200000 * 128)` to convert it to seconds.
     - Return type: int
 
 ```python
@@ -662,7 +677,7 @@ stamp_uwb_0.tx_timestamp()
 
     Read the last RX timestamp.
 
-    - Returns: Full 40-bit RX timestamp in device time units.
+    - Returns: Full 40-bit RX timestamp as a raw device-clock count. One count is approximately `15.65 ps`; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by `1 / (499200000 * 128)` to convert it to seconds.
     - Return type: int
 
 ```python
@@ -672,7 +687,7 @@ stamp_uwb_0.rx_timestamp()
 
     Read the current UWB system timestamp.
 
-    - Returns: Full 40-bit system timestamp in device time units.
+    - Returns: 32-bit system timestamp as a raw device-clock count. One count is approximately `15.65 ps`; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by `1 / (499200000 * 128)` to convert it to seconds. The counter wraps approximately every `67.2 ms`.
     - Return type: int
 
 ```python

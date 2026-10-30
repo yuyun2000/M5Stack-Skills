@@ -5,7 +5,7 @@ Use it to communicate with Unit, Hat, and other I2C peripherals.
 
 ## MicroPython Example
 
-Scan PORT.A on a CoreS3 or most S3-based controllers. Note that the pin numbers differ per controller (for example StickS3 uses Grove SCL 10 / SDA 9 and its internal bus is SCL 48 / SDA 47); check the controller page for the right pins.
+Scan PORT.A on a CoreS3 or most S3-based controllers.
 
 ```python
 from hardware import I2C, Pin

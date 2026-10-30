@@ -1,7 +1,7 @@
 # Public plugin submission handoff
 
 The prepared publisher is **yuyun2000**. Package name: `m5stack-skills`.
-Display name: **M5Stack Skills**. Initial version: **0.1.0**.
+Display name: **M5Stack Skills**. Current package version: **0.1.1**.
 The repository is the single maintained source for all four skills.
 
 ## Prepared materials
@@ -22,7 +22,7 @@ Follow the current [OpenAI submission guide](https://developers.openai.com/plugi
 
 1. Sign in to the publisher's OpenAI organization/project and complete personal
    developer identity verification. A GitHub login does not establish this.
-2. Upload `m5stack-skills-0.1.0.zip`, including its MCP configuration from the start.
+2. Upload `m5stack-skills-0.1.1.zip`, including its MCP configuration from the start.
 3. Select the package's public MCP and complete the portal's domain-verification
    challenge. `mcp.m5stack.com` is operated by M5Stack; coordinate the exact
    challenge with that operator rather than claiming personal domain control.

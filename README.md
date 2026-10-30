@@ -122,6 +122,8 @@ are not proof of real-device execution or visual correctness.
 ## Sources and maintenance
 
 The initial packages were retrieved from M5Stack Skill Hub on **2026-10-08**.
+`uiflow2-coder` was refreshed on **2026-10-30** for release **0.1.1**, adding
+controller/driver documentation and display API/rotation guidance.
 [skills-lock.json](skills-lock.json) records the source timestamps, archive and
 content hashes, file counts, and public-package adjustments. It contains no
 private service addresses or Hub comments. These are snapshots, not live docs.

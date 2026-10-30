@@ -23,7 +23,7 @@ def setup():
     global title0, label0, module_lorawaneu868_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "LoraWAN868 P2P Send", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18
@@ -80,7 +80,7 @@ def setup():
     global title0, label0, module_lorawaneu868_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "LoraWAN868 P2P Receive", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18
@@ -175,7 +175,7 @@ Configure the device for OTAA (Over-The-Air Activation) mode.
 ```python
 lorawan_rui3.set_otaa_config(
     device_eui="2CF7F1C0420000AA",
-    app_key="2B7E151628AED2A6ABF7158809CF4F3C",
+    app_key="2B7E151628AED2A6ABF7158809CF4F3C"
     app_eui="80000000000000AA",
 )
 ```
