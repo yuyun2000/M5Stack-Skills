@@ -9,7 +9,7 @@ the repository and updated distributions without altering the other skills.
   current source snapshot separately from the original October 8 import.
 - [x] Run skill/repository checks, Python parsing, document search and archive
   integrity/reproducibility checks; audit the staged public diff.
-- [ ] Commit/push main, verify remote commit and GitHub CI, publish v0.1.1
+- [x] Commit/push main, verify remote commit and GitHub CI, publish v0.1.1
   artifacts and compare downloaded asset hashes.
 
 Audit baseline: the October 30 12:12 CST Hub package has 385 files, adding nine
@@ -26,3 +26,9 @@ search for new controller/driver documents; Codex copy installation (410 files)
 and Claude Code symlink installation of the UI pair (397 files); unchanged
 source hashes for the other three skills; reproducible ZIP builds with full
 source/member content and permission comparisons. No hardware run was performed.
+
+Published source commit: `a92e721`; local and remote main matched.
+[GitHub CI](https://github.com/yuyun2000/M5Stack-Skills/actions/runs/41012376769)
+passed. [Release v0.1.1](https://github.com/yuyun2000/M5Stack-Skills/releases/tag/v0.1.1)
+is public. All seven downloaded release assets matched their local SHA-256;
+all six ZIPs passed integrity checks. The previous v0.1.0 release is preserved.
