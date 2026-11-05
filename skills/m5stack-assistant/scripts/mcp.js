@@ -6,6 +6,7 @@
 
 const https = require('https');
 const { URL } = require('url');
+const { TextDecoder } = require('util');
 
 /**
  * 简单的 MCP 查询函数 - 一键查询 M5Stack 知识库
@@ -27,11 +28,14 @@ async function mcpSearch(query, options = {}) {
 
     // 1. 连接 SSE
     const sseUrl = new URL('https://mcp.m5stack.com/sse');
+    // 多字节 UTF-8 字符可能被拆到两个网络分块中，必须用流式解码器跨分块
+    // 拼接；逐块 chunk.toString() 会把拆开的字节替换成 U+FFFD。
+    const decoder = new TextDecoder('utf-8');
     sseConnection = https.get(sseUrl, (res) => {
       let data = '';
 
       res.on('data', (chunk) => {
-        data += chunk.toString();
+        data += decoder.decode(chunk, { stream: true });
 
         // 处理收到的数据
         if (!messageEndpoint && data.includes('event: endpoint')) {
@@ -108,6 +112,7 @@ async function mcpSearch(query, options = {}) {
       });
 
       res.on('end', () => {
+        data += decoder.decode();
         if (!result) {
           cleanup();
           reject(new Error('连接关闭，未收到结果'));

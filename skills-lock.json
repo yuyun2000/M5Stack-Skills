@@ -58,7 +58,7 @@
       "sourceArchiveSha256": "4bf3f159a19af8b686056beb8e425f44b6be64d7ca9ea0d596632cc18f8bd1c7",
       "sourceContentSha256": "4b783dd2706aae881914cfb3eb190570de4bfbd7511676d46f2100f4ec5ef37c",
       "publishedFileCount": 7,
-      "publishedContentSha256": "681d8891350bab0e93e01e16520cb891f0dc7804f1db7b738da72d8b6f9adbae",
+      "publishedContentSha256": "23ef9743d76ce0c9fd3a240239423e602f64e245ccf484032d6104fce2a16c3e",
       "publicAdjustments": [
         "Add a portable MIT LICENSE notice.",
         "Restore executable bits on shebang helper scripts where applicable.",
